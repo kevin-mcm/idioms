@@ -1,5 +1,11 @@
 #include <iostream>
+#include "raii/File.h"
+
+void raiiIdiom(const std::string& filename) {
+    raii::File f(filename);
+}
 
 int main(int, char**) {
-    std::cout << "Hello, world!\n";
+    raiiIdiom("../README.md");
+    return EXIT_SUCCESS;
 }
